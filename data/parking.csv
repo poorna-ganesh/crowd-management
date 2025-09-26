@@ -1,0 +1,6 @@
+slot_id,status,level
+P1,free,1
+P2,occupied,1
+P3,free,1
+P4,free,2
+P5,occupied,2

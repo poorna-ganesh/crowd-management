@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard — Darshan Sahay</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Darshan Sahay — Somnath</div>
+      <div class="actions">
+        <button id="accessibilityToggle">Accessibility Mode</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Virtual Queue Booking -->
+      <section class="card">
+        <h2>Virtual Queuing</h2>
+        <p>Book your darshan slot days in advance. Get a QR pass and skip the physical queue.</p>
+        <form id="bookForm">
+          <input name="name" placeholder="Your name" required />
+          <input name="phone" placeholder="Phone" required />
+          <input name="email" placeholder="Email" />
+          <input name="date" type="date" required />
+          <select name="queue_type">
+            <option>General</option>
+            <option>VIP</option>
+            <option>Special</option>
+          </select>
+          <input name="slot_time" type="time" value="09:00" required />
+          <button type="submit">Book Slot</button>
+        </form>
+        <div id="bookingResult"></div>
+      </section>
+
+      <!-- Live Dashboard -->
+      <section class="card">
+        <h2>Live Pilgrim Dashboard</h2>
+        <div class="row">
+          <div>
+            <h3>Live Wait Times</h3>
+            <ul id="waitTimes"></ul>
+          </div>
+          <div>
+            <h3>Temple Schedule</h3>
+            <ul>
+              {% for s in schedule %}
+                <li>{{ s.event }} — {{ s.time }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div>
+            <h3>Crowd Forecast</h3>
+            <ul>
+              {% for d, info in forecasts.items() %}
+                <li>{{ d }} — {{ info.level }} ({{ info.predicted_visitors }})</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map & Navigation -->
+      <section class="card">
+        <h2>Smart Navigation & Guidance</h2>
+        <div id="map" style="height:300px; border-radius:8px;"></div>
+        <p>Use the "Navigate" button on a marker for turn-by-turn audio using your browser's speech API.</p>
+      </section>
+
+      <!-- Parking & SOS -->
+      <section class="card two-col">
+        <div>
+          <h2>Traffic & Parking Aid</h2>
+          <button id="refreshParking">Refresh Parking</button>
+          <ul id="parkingList"></ul>
+        </div>
+        <div>
+          <h2>Safety & Emergency</h2>
+          <button id="sosBtn">One-Touch SOS</button>
+          <div id="sosResult"></div>
+        </div>
+      </section>
+
+      <!-- Accessibility & Voice Commands -->
+      <section class="card">
+        <h2>Accessibility Mode</h2>
+        <p>Toggle accessibility and use voice commands: say "book slot" to open booking quickly.</p>
+        <button id="voiceStart">Start Voice</button>
+        <div id="voiceResult"></div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_key }}&libraries=places&callback=initMap" async defer></script>
+  </body>
+</html>

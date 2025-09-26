@@ -1,0 +1,10 @@
+date,queue_type,avg_wait_minutes,visitor_count
+2025-09-20,General,120,5000
+2025-09-20,VIP,30,200
+2025-09-20,Special,45,300
+2025-09-21,General,90,4200
+2025-09-21,VIP,25,150
+2025-09-21,Special,40,250
+2025-09-22,General,180,7000
+2025-09-22,VIP,40,350
+2025-09-22,Special,60,420

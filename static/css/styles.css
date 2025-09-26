@@ -1,0 +1,127 @@
+/* static/css/styles.css - Clean, minimal UI */
+:root {
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --accent: #0b63d6;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: #111;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-inner {
+  text-align: center;
+  padding: 32px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 16px auto;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e6eef8;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(11, 99, 214, 0.06);
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.row > div {
+  flex: 1;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  margin: 6px 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.two-col {
+  display: flex;
+  gap: 20px;
+}
+
+#bookingResult {
+  margin-top: 8px;
+}
+
+.accessibility {
+  font-size: 20px;
+}
+
+/* accessibility mode */
+.accessible {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+  .two-col {
+    flex-direction: column;
+  }
+}
