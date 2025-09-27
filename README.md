@@ -24,4 +24,3 @@ It provides AI/ML-based crowd prediction, smart queue management, real-time heat
 
 ---
 
-## Project Structure
